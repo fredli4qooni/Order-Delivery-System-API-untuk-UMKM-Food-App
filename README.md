@@ -84,6 +84,9 @@ Semua endpoint API di-prefix dengan `/api/v1`.
         -   `PATCH /orders/{order}/status` (Update status oleh kurir)
         -   `PATCH /orders/{order}/eta` (Update ETA oleh kurir)
 
+File koleksi Postman juga tersedia di dalam repository ini:
+-   **Lokasi File**: `postman/Order_Delivery_API.postman_collection.json` 
+
 ## Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](LICENSE.md).
