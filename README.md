@@ -2,7 +2,7 @@
 
 ![Laravel](https://img.shields.io/badge/Laravel-10-FF2D20?style=for-the-badge&logo=laravel) ![PHP](https://img.shields.io/badge/PHP-8.1-777BB4?style=for-the-badge&logo=php) ![MySQL](https://img.shields.io/badge/MySQL-blue?style=for-the-badge&logo=mysql) ![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
-Project Backend RESTful API untuk sistem pemesanan dan pengiriman yang dirancang untuk Usaha Mikro, Kecil, dan Menengah (UMKM) atau aplikasi makanan. Dibangun menggunakan Laravel 10 dengan PHP 8.1 dan MySQL sebagai database.
+RESTful API untuk sistem pemesanan dan pengiriman yang dirancang untuk Usaha Mikro, Kecil, dan Menengah (UMKM) atau aplikasi makanan. Dibangun menggunakan Laravel 10 dengan PHP 8.1 dan MySQL sebagai database.
 
 ---
 
