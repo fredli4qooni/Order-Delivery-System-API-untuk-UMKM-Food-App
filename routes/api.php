@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\V1\Customer\CategoryController as CustomerCategoryC
 use App\Http\Controllers\Api\V1\Customer\ProductController as CustomerProductController;
 use App\Http\Controllers\Api\V1\Customer\OrderController as CustomerOrderController;
 use App\Http\Controllers\Api\V1\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\Api\V1\Courier\OrderController as CourierOrderController;
 
 Route::prefix('v1')->group(function () {
     // Publicly accessible product and category listings
@@ -45,5 +46,17 @@ Route::prefix('v1')->group(function () {
             Route::get('/orders', [CustomerOrderController::class, 'index'])->name('orders.index');
             Route::get('/orders/{order}', [CustomerOrderController::class, 'show'])->name('orders.show');
         });
+
+         // Courier Routes
+        Route::prefix('courier')->name('api.v1.courier.')->middleware('role:courier')->group(function () {
+            Route::get('/orders', [CourierOrderController::class, 'index'])->name('orders.index');
+            Route::get('/orders/{order}', [CourierOrderController::class, 'show'])->name('orders.show')
+                 ->where('order', '[0-9]+'); 
+            Route::patch('/orders/{order}/status', [CourierOrderController::class, 'updateStatus'])->name('orders.updateStatus')
+                 ->where('order', '[0-9]+');
+            Route::patch('/orders/{order}/eta', [CourierOrderController::class, 'updateEta'])->name('orders.updateEta')
+                 ->where('order', '[0-9]+');
+        });
+    
     });
 });
