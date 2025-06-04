@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CategoryResource extends JsonResource
+class UserResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,14 +14,12 @@ class CategoryResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        // Hanya tampilkan data yang relevan dan aman
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'slug' => $this->slug,
-            'description' => $this->description,
-            'created_at' => $this->created_at->toIso8601String(), // Format tanggal standar
-            'updated_at' => $this->updated_at->toIso8601String(),
-            'products' => ProductResource::collection($this->whenLoaded('products')),
+            // 'email' => $this->email, // Mungkin tidak perlu selalu ditampilkan di detail order
+            'role' => $this->role, // Berguna untuk membedakan
         ];
     }
 }
